@@ -4,3 +4,33 @@
   width: 50px;
   height: 50px;
 }
+
+/* body {
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(130, 117, 211));
+} */
+
+.container {
+  max-width: 955px;
+  background-color: aqua;
+  margin: auto;
+  height: 60vh;
+}
+
+.message {
+  background-color: azure;
+  width: 24%;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+.left {
+  float: left;
+  clear: both;
+}
+
+.right {
+  float: right;
+  clear: both;
+}
