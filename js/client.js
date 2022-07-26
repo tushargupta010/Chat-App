@@ -18,3 +18,15 @@ const append = (message, position) => {
 socket.on("user-joined", (name) => {
   append(`${name} is joined now.`, "right");
 });
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const message = inputMessage.value;
+  append(`You : ${message}`, "right");
+  socket.emit("send", message);
+  inputMessage.value = "";
+});
+
+socket.on("receive", (data) => {
+  append(`${data.name} : ${data.message}`, "left");
+});
