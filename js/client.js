@@ -5,5 +5,16 @@ const inputMessage = document.getElementById("inputMessage");
 const messageContainer = document.querySelector(".container");
 
 const userName = prompt("Enter your name to join");
-console.log(userName);
 socket.emit("new-user-joined", userName);
+
+const append = (message, position) => {
+  const messageElement = document.createElement("div");
+  messageElement.innerText = message;
+  messageElement.classList.add("message");
+  messageElement.classList.add(position);
+  messageContainer.append(messageElement);
+};
+
+socket.on("user-joined", (name) => {
+  append(`${name} is joined now.`, "right");
+});
